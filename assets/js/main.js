@@ -1,9 +1,8 @@
 function random(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-let gameOver = false;
 let player = 1;
+let gameOver = false;
 let rowOne = document.querySelectorAll('.cell-one');
 let rowTwo = document.querySelectorAll('.cell-two');
 let rowThree = document.querySelectorAll('.cell-three');
@@ -11,14 +10,7 @@ let rowFour = document.querySelectorAll('.cell-four');
 let rowFive = document.querySelectorAll('.cell-five');
 let rowSix = document.querySelectorAll('.cell-six');
 let rowSeven = document.querySelectorAll('.cell-seven');
-
-
-
-
-
-
-
-
+let gravityTable = document.querySelectorAll('.cell');
 
 let checkWinTable = [
     [],
@@ -30,25 +22,29 @@ let checkWinTable = [
 ];
 let turn = 0;
 
-
-
-
 function play(elem) {
-    if (elem.innerHTML != "_" && elem.innerHTML != "}" && gameOver == false) {
-        if (player == 1) {
-            elem.innerHTML = "_"
-            elem.style.color = "red"
-            player = 2;
-            turn++
-        } else {
-            elem.innerHTML = "}"
-            elem.style.color = "yellow"
-            player = 1;
-            turn++
+    let elemId = elem.id
+    let index = parseInt(elemId.split("-")[1])   //question sur split
+    console.log(gravityTable[index + 7]);
+    if (elem.innerHTML == "" && elem.innerHTML == "" && gameOver == false) {
+        console.log(player);
+        for (let i = index; i < gravityTable.length - 1; i = i + 7) {
+            if (gravityTable[i + 7] && gravityTable[i + 7].innerHTML == "" && player % 2 != 0) {
+                gravityTable[i + 7].innerHTML = "_";
+                gravityTable[i].innerHTML = "";
+                console.log(player);
+            }
+            if (gravityTable[i + 7] && gravityTable[i + 7].innerHTML == "" && player % 2 == 0) {
+                gravityTable[i + 7].innerHTML = "}";
+                gravityTable[i].innerHTML = "";
+                console.log(player);
+            }
         }
+        player++
+        updateGrid()
     }
-    updateGrid()
 }
+
 
 function updateGrid() {
     for (let i = 0; i < rowOne.length; i++) {
