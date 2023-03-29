@@ -1,32 +1,31 @@
 @font-face {
-    font-family: starwars ;
+    font-family: starwars;
     src: url(../fonts/StarWars.ttf);
 }
 
 @font-face {
-    font-family: starjedi ;
+    font-family: starjedi;
     src: url(../fonts/Starjedi.ttf);
 }
 
 @font-face {
-    font-family: starjhol ;
+    font-family: starjhol;
     src: url(../fonts/Starjhol.ttf);
 }
 
-body{
+body {
     background-image: url(../img/hyperspace_background.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 }
 
-.container{
+.container {
     display: flex;
-    justify-content: center;
-
-    
+    justify-content: space-between;
+    align-items: center;
 }
 
-h1{
+h1 {
     font-family: starjhol;
     font-size: 80px;
     text-align: center;
@@ -36,7 +35,7 @@ h1{
 #grid {
     display: flex;
     flex-direction: column;
-    margin-top: 50px;
+    margin: 30px 100px 100px 100px ;
     width: 714PX;
     height: auto;
     background-image: url(../img/death-star\ pattern.jpg);
@@ -50,13 +49,13 @@ p {
     font-size: 100px;
 }
 
-.row{
+.row {
     display: flex;
     justify-content: center;
 }
 
 
-.cell{
+.cell {
     width: 100px;
     height: 100px;
     line-height: 110px;
@@ -66,5 +65,89 @@ p {
     font-size: 70px;
     color: red;
     text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.582);
+}
 
+#score {
+    text-align: center;
+    padding: 20px;
+    margin: 100px;
+    width: 666px;
+    height: auto;
+    background-image: url(../img/cockpit.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 5px ridge gray;
+
+}
+
+#activePlayer{
+    display: flex;
+    justify-content: space-between;
+}
+
+#activePlayer img{
+    margin: 0 100px 20px 100px;
+    width: 100px;
+    height: auto;
+}
+
+#score p {
+    font-family: starJedi;
+    font-size: 80px;
+    color: yellow;
+    text-shadow: 5px 5px 5px rgba(255, 255, 0, 0.653);
+}
+
+h2 {
+    font-family: starJhol;
+    font-size: 30px;
+    color: yellow;
+}
+
+#rebWin{
+    position: absolute;
+    margin-top: 30px;
+    top: 400px;
+    left: 160px;
+    display: none;
+}
+
+#impWin{
+    position: absolute;
+    margin-top: 30px;
+    top: 400px;
+    left: 140px;
+    display: none;
+}
+
+#draw{
+    position: absolute;
+    margin-top: 30px;
+    top: 500px;
+    left: 280px;
+    display: none;
+}
+
+button{
+display: inline-block;
+padding: 15px 25px;
+font-size: 15px;
+font-family: starJedi;
+cursor: pointer;
+text-align: center;
+text-decoration: none;
+outline: none;
+color: #fff;
+background-color: #767676b0;
+border: none;
+border-radius: 15px;
+box-shadow: 0 9px #999;
+}
+
+button:hover {background-color: #767676b0}
+
+button:active {
+background-color: #767676b0;
+box-shadow: 0 5px #666;
+transform: translateY(4px);
 }

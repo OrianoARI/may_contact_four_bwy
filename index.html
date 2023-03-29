@@ -68,8 +68,28 @@
                 <div class="cell-six cell" id="cell-41" onclick="play(this)"></div>
             </div>
         </div>
+        <div id="score">
+            <div>
+                <h2>Tableau de bord</h2>
+                <div id="gameSelect">
+                    <button id="solo" class="button" onclick="onePlayer()">Solo</button>
+                    <button id="multi" class="button" onclick="multiPlayer()">Multijoueur</button>
+                </div>
+                <div id="activePlayer">
+                    <img src="assets/img/rebel-logo.png" alt="logo-rebel" id="rebels">
+                    <img src="assets/img/empire-logo-inactiv.png" alt="logo-empire" id="empire">
+                </div>
+                <div class="win">
+                    <p id="rebWin">La Rebellion <br> l'emporte!</p>
+                    <p id="impWin">L'empire vous <br> a dominé!</p>
+                    <p id="draw">Egalité!</p>
+                </div>
+                <div>
+                    <button id="reset" class="button" onclick="reset()">Rejouer</button>
+                </div>
+    </div>
 
-
+        </div>
         <script src="assets/js/main.js"></script>
 </body>
 

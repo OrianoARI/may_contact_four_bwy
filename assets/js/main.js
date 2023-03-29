@@ -32,9 +32,14 @@ function play(elem) {
         if (player % 2 != 0) {
             currentColor = "red"
             currentSymbol = "_"
+            document.querySelector("#empire").src = "./assets/img/empire-logo.png"
+            document.querySelector("#rebels").src = "./assets/img/rebel-logo-inactiv.png"
+
         } else {
             currentColor = "yellow"
             currentSymbol = "}"
+            document.querySelector("#empire").src = "./assets/img/empire-logo-inactiv.png"
+            document.querySelector("#rebels").src = "./assets/img/rebel-logo.png"
         }
         elem.innerHTML = currentSymbol
         elem.style.color = currentColor
@@ -84,19 +89,35 @@ function checkWin() {
     for (let i = 0; i < checkWinTable.length; i++) {
         for (let j = 0; j < checkWinTable[i].length; j++) {
             if (checkWinTable[i][j] != "" && checkWinTable[i][j] == checkWinTable[i][j + 1] && checkWinTable[i][j + 1] == checkWinTable[i][j + 2] && checkWinTable[i][j + 2] == checkWinTable[i][j + 3]) {
-                console.log("gagné");
+                if (player % 2 != 0) {
+                    impWin.style.display = "block";
+                } else {
+                    rebWin.style.display = "block";
+                }
                 gameOver = true;
             }
             if ((checkWinTable[i + 3] && checkWinTable[i][j] != "" && checkWinTable[i][j] == checkWinTable[i + 1][j] && checkWinTable[i + 1][j] == checkWinTable[i + 2][j] && checkWinTable[i + 2][j] == checkWinTable[i + 3][j])) {
-                console.log("gagné");
+                if (player % 2 != 0) {
+                    impWin.style.display = "block";
+                } else {
+                    rebWin.style.display = "block";
+                }
                 gameOver = true;
             }
             if ((checkWinTable[i + 3] && checkWinTable[i][j] != "" && checkWinTable[i][j] == checkWinTable[i + 1][j + 1] && checkWinTable[i + 1][j + 1] == checkWinTable[i + 2][j + 2] && checkWinTable[i + 2][j + 2] == checkWinTable[i + 3][j + 3])) {
-                console.log("gagné");
+                if (player % 2 != 0) {
+                    impWin.style.display = "block";
+                } else {
+                    rebWin.style.display = "block";
+                }
                 gameOver = true;
             }
             if ((checkWinTable[i + 3] && checkWinTable[i][j + 3] != "" && checkWinTable[i][j + 3] == checkWinTable[i + 1][j + 2] && checkWinTable[i + 1][j + 2] == checkWinTable[i + 2][j + 1] && checkWinTable[i + 2][j + 1] == checkWinTable[i + 3][j])) {
-                console.log("gagné");
+                if (player % 2 != 0) {
+                    impWin.style.display = "block";
+                } else {
+                    rebWin.style.display = "block";
+                }
                 gameOver = true;
             }
         }
@@ -105,4 +126,15 @@ function checkWin() {
         console.log("draw");
         gameOver = true;
     }
+}
+
+function reset() {
+    gravityTable.forEach(element => {
+        element.innerHTML = ""
+    });
+    rebWin.style.display = "none";
+    impWin.style.display = "none";
+    draw.style.display = "none";
+    player = 1;
+    gameOver = false;
 }
