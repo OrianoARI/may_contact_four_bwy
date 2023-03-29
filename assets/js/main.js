@@ -21,8 +21,24 @@ let checkWinTable = [
     [],
 ];
 let turn = 0;
+let isMulti = true;
+let soloButton = document.querySelector("#solo")
+let multiButton = document.querySelector("#multi")
 
+
+function cpuPlay() {
+    let cpuCell = random(0, 41)
+    while (gravityTable[cpuCell].innerHTML != "") {
+        cpuCell = random(0, 41)
+    }
+    gravityTable[cpuCell].click()
+
+}
 function play(elem) {
+    soloButton.disabled = true;
+    solo.style.color = "grey"
+    multiButton.disabled = true;
+    multi.style.color = "grey"
     let elemId = elem.id
     let currentSymbol
     let currentColor
@@ -36,10 +52,10 @@ function play(elem) {
             document.querySelector("#rebels").src = "./assets/img/rebel-logo-inactiv.png"
 
         } else {
-            currentColor = "yellow"
-            currentSymbol = "}"
-            document.querySelector("#empire").src = "./assets/img/empire-logo-inactiv.png"
-            document.querySelector("#rebels").src = "./assets/img/rebel-logo.png"
+                currentColor = "yellow"
+                currentSymbol = "}"
+                document.querySelector("#empire").src = "./assets/img/empire-logo-inactiv.png"
+                document.querySelector("#rebels").src = "./assets/img/rebel-logo.png"
         }
         elem.innerHTML = currentSymbol
         elem.style.color = currentColor
@@ -57,10 +73,13 @@ function play(elem) {
         }
         player++
         updateGrid()
+       
+        if (player % 2 == 0 && !isMulti) {
+            setTimeout(cpuPlay, 800)
+        }
+        
     }
-
 }
-
 
 function updateGrid() {
     for (let i = 0; i < rowOne.length; i++) {
@@ -135,6 +154,18 @@ function reset() {
     rebWin.style.display = "none";
     impWin.style.display = "none";
     draw.style.display = "none";
+    soloButton.disabled = false;
+    solo.style.color = "white";
+    multiButton.disabled = false;
+    multi.style.color = "white";
     player = 1;
     gameOver = false;
+}
+
+function onePlayer() {
+    isMulti = false;
+}
+
+function multiPlayer(){
+    isMulti = true;
 }
