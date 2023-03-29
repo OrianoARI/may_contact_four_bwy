@@ -1,0 +1,59 @@
+@media screen and (max-width: 768px) {
+
+    h1 {
+        font-size: 50px;
+    }
+
+    .container {
+        margin: 20px;
+        flex-direction: column-reverse;
+    }
+
+    #grid {
+        margin: 0;
+        width: 93%;
+        height: auto;
+        box-shadow: 5% 5% 5% rgba(255, 255, 255, 0.667);
+    }
+    
+    .cell {
+        font-size: 200%;
+    }
+
+    #score {
+        margin: 20px;
+        width: 80%;
+        height: auto;
+    }
+
+    #activePlayer img{
+        margin: 20px 0 20px 0;
+        width: 10%;
+        height: 10%;
+        flex: 1;
+    }
+
+    h2 {
+        margin-top: 0;
+    }
+
+    #score p {
+        font-size: 30px;
+    }
+
+    #rebWin{
+        top: 150%;
+        left: 25%;
+    }
+    
+    #impWin{
+        top: 150%;
+        left: 25%;
+    }
+    
+    #draw{
+        top: 150%;
+        left: 35%;
+    }
+
+}

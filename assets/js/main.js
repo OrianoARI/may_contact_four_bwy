@@ -142,7 +142,7 @@ function checkWin() {
         }
     }
     if (player >= 43 && gameOver == false) {
-        console.log("draw");
+        draw.style.display = "block";
         gameOver = true;
     }
 }
