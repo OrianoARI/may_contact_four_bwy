@@ -27,7 +27,7 @@ body {
 
 h1 {
     font-family: starjhol;
-    font-size: 80px;
+    font-size: 60px;
     text-align: center;
     color: yellow;
 }
@@ -35,7 +35,7 @@ h1 {
 #grid {
     display: flex;
     flex-direction: column;
-    margin: 30px 100px 100px 100px ;
+    margin: 30px 100px 100px 100px;
     width: 714px;
     height: auto;
     background-image: url(../img/death-star\ pattern.jpg);
@@ -76,12 +76,12 @@ h1 {
 
 }
 
-#activePlayer{
+#activePlayer {
     display: flex;
     justify-content: space-between;
 }
 
-#activePlayer img{
+#activePlayer img {
     margin: 0 100px 20px 100px;
     width: 100px;
     height: auto;
@@ -100,50 +100,56 @@ h2 {
     color: yellow;
 }
 
-#rebWin{
+#rebWin {
     position: absolute;
     margin-top: 30px;
     top: 400px;
-    left: 160px;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
 }
 
-#impWin{
+#impWin {
     position: absolute;
     margin-top: 30px;
     top: 400px;
-    left: 140px;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
 }
 
-#draw{
+#draw {
     position: absolute;
     margin-top: 30px;
     top: 500px;
-    left: 280px;
+    left: 50%;
+    transform: translateX(-50%);
     display: none;
 }
 
-button{
-display: inline-block;
-padding: 15px 25px;
-font-size: 15px;
-font-family: starJedi;
-cursor: pointer;
-text-align: center;
-text-decoration: none;
-outline: none;
-color: #fff;
-background-color: #767676b0;
-border: none;
-border-radius: 15px;
-box-shadow: 0 9px #999;
+button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 15px;
+    font-family: starJedi;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: #fff;
+    background-color: #767676b0;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
 }
 
-button:hover {background-color: #767676b0}
+button:hover {
+    background-color: #767676;
+    color: yellow;
+}
 
 button:active {
-background-color: #767676b0;
-box-shadow: 0 5px #666;
-transform: translateY(4px);
+    background-color: #767676b0;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
 }

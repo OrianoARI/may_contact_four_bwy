@@ -1,7 +1,9 @@
 @media screen and (max-width: 768px) {
 
     h1 {
-        font-size: 50px;
+        font-size: 30px;
+        margin-bottom: 0;
+        margin-top: 0;
     }
 
     .container {
@@ -17,24 +19,38 @@
     }
     
     .cell {
-        font-size: 200%;
+        font-size: 150%;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
     }
 
     #score {
         margin: 20px;
+        margin-top: 0;
+        padding: 5px;
         width: 80%;
-        height: auto;
+        height: 50%;
+    }
+
+
+    #activePlayer{
+        justify-content: space-around;
     }
 
     #activePlayer img{
         margin: 20px 0 20px 0;
-        width: 10%;
-        height: 10%;
-        flex: 1;
+        width: 25%;
+        height: 25%;
+
     }
+
+ 
+
 
     h2 {
         margin-top: 0;
+        font-size: 20px;
     }
 
     #score p {
@@ -42,18 +58,28 @@
     }
 
     #rebWin{
-        top: 150%;
-        left: 25%;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     #impWin{
-        top: 150%;
-        left: 25%;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
     }
     
     #draw{
-        top: 150%;
-        left: 35%;
+        top: 60%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    button {
+        padding: 5px 10px;
+        margin-bottom: 10px;
+        font-size: 10px;
+        font-family: starJedi;
     }
 
 }
